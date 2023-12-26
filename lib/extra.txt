@@ -1,0 +1,1 @@
+Text('Total               Rs. ${sum(selected)}',style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.bold),)

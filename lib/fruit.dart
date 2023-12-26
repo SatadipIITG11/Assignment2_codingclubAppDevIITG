@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/class.dart';
-
+import 'package:app/bill.dart';//making bill page...
 
 class Fruit extends StatefulWidget {
   // const MyHomePage({super.key});
@@ -68,8 +68,8 @@ class _MyFruitPageState extends State<Fruit> {
           IconButton(
               onPressed: () {
                 //i will come to it later
-                // Navigator.push(
-                //     context, MaterialPageRoute(builder: (context) => Fruit()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Bill(selected:selected)));
               },
               icon: Icon(Icons.forward_sharp))
         ],

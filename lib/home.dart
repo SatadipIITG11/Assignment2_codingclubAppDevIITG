@@ -39,10 +39,23 @@ class _MyHomePageState extends State<Home> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
-                    width: 350,
-                    height: 350,
-                    child: Image.asset('lib/images/strawberry.jpg'),
-                    
+                    width: 370,
+                    height: 370,
+                    child: Image.asset('lib/images/strawberryb.png'),
+                    // decoration: BoxDecoration(boxShadow: [
+                    //   BoxShadow(
+                    //     color: Colors.grey.shade500,
+                    //     offset: Offset(14, 14),
+                    //     spreadRadius: 17,
+                    //     blurRadius: 30.0,
+                    //   ),
+                      
+                    // ],
+                    //  border: Border.all(
+                    //   width: 1,
+                    //   color: Colors.black,
+                    //  )
+                    //  ),
                   ),
                 ),
               ),
@@ -50,6 +63,7 @@ class _MyHomePageState extends State<Home> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                       foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                      elevation: 9,
                       fixedSize: Size(170, 70)),
                   onPressed: () => Navigator.push(
                       context, MaterialPageRoute(builder: (context) => Veg())),
