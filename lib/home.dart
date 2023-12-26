@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/veg.dart';
 
 class Home extends StatefulWidget {
   // const MyHomePage({super.key});
@@ -8,14 +9,16 @@ class Home extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Home> {
-  int count = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title:Text("SHOP",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w400,color: Colors.white),),
+          title: Text(
+            "MyShop",
+            style: TextStyle(
+                fontSize: 25, fontWeight: FontWeight.w400, color: Colors.white),
+          ),
           backgroundColor: Colors.red,
           leading: IconButton(
             icon: Icon(Icons.menu),
@@ -23,19 +26,39 @@ class _MyHomePageState extends State<Home> {
               // I will do something later Ok..
             },
           ),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))],
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+          ],
         ),
         body: Center(
           child: Column(
             children: [
-              Container(
-                width: 200,
-                height: 200,
-                child:Image.asset('lib/images/strawberry.jpg')
-              )
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 70),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Container(
+                    width: 350,
+                    height: 350,
+                    child: Image.asset('lib/images/strawberry.jpg'),
+                    
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                      fixedSize: Size(170, 70)),
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Veg())),
+                  child: Text(
+                    'SHOP NOW',
+                    style: TextStyle(fontSize: 22, color: Colors.white),
+                  ))
             ],
           ),
-        )
-        );
+        ));
   }
 }
