@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/class.dart';
-// import 'package:app/fruit.dart';
+import 'package:app/fruit.dart';
 
 class Veg extends StatefulWidget {
   // const MyHomePage({super.key});
@@ -37,7 +37,7 @@ class _MyVegPageState extends State<Veg> {
         image: 'lib/images/brinjal.jpg')
   ];
 
-  List<item> selectedveg = [];
+  List<item> selected = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,8 +64,10 @@ class _MyVegPageState extends State<Veg> {
           IconButton(
               onPressed: () {
                 //i will come to it later
-                // Navigator.push(
-                //     context, MaterialPageRoute(builder: (context) => Fruit()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Fruit(selected: selected)));
               },
               icon: Icon(Icons.forward_sharp))
         ],
@@ -92,6 +94,7 @@ class _MyVegPageState extends State<Veg> {
 
   Widget Mycon(String name, int price, double quantity, bool isSelected,
       String image, int index) {
+    // String place = 'Quantity';
     return Expanded(
       child: Column(
         children: [
@@ -118,18 +121,19 @@ class _MyVegPageState extends State<Veg> {
                 width: 90,
                 height: 44,
                 child: TextField(
-                  decoration: InputDecoration(hintText: "Quantity"
-                  ,border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                             color: Colors.black, 
-                              width: 3.0),
-                              ),
+                  decoration: InputDecoration(
+                    hintText: 'Quantity',
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 3.0),
+                    ),
                   ),
-               //how to remove the text box on outside tap..???
+                  //how to remove the text box on outside tap..???
                   onChanged: (String str) {
                     setState(() {
-                      content[index].quantity =double.parse(str);
+                      content[index].quantity = double.parse(str);
+                      
                     });
+                    // place = str;
                   },
                 ),
               ),
@@ -146,15 +150,16 @@ class _MyVegPageState extends State<Veg> {
             onTap: () {
               setState(() {
                 content[index].isSelected = !content[index].isSelected;
-                if (content[index].isSelected == true && content[index].quantity!=0 ) {
-                  selectedveg.add(item(
+                if (content[index].isSelected == true &&
+                    content[index].quantity != 0) {
+                  selected.add(item(
                       name: name,
                       price: price,
                       quantity: quantity,
                       isSelected: isSelected,
                       image: image));
                 } else {
-                  selectedveg.removeWhere(
+                  selected.removeWhere(
                       (element) => element.name == content[index].name);
                 }
               });
