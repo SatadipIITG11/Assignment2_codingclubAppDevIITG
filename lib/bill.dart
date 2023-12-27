@@ -21,7 +21,7 @@ class _MybillPageState extends State<Bill> {
         backgroundColor: Colors.red,
         title: Text(
           'BILL',
-          style: TextStyle(fontSize: 25, color: Colors.white),
+          style: TextStyle(fontSize: 25, color: Colors.white,fontFamily: 'PTSans'),
         ),
         centerTitle: true,
         // leading: IconButton(
@@ -80,8 +80,8 @@ class _MybillPageState extends State<Bill> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('TOTAL',style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.bold),),
-                Text('RS. ${sum(selected)}',style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.bold),)
+                Text('TOTAL',style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.bold,fontFamily: 'FiraSans'),),
+                Text('RS. ${sum(selected)}',style: TextStyle(fontSize: 22,color: Colors.white,fontWeight: FontWeight.bold,fontFamily:'FiraSans'),)
               ],
             ),
           ),
@@ -99,10 +99,10 @@ class _MybillPageState extends State<Bill> {
         leading: CircleAvatar(
           child: Image.asset(image),
         ),
-        title: Text(name,style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        subtitle: Text('$quantity kg   Rs.$price/kg'),
+        title: Text(name,style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'PTSans'),),
+        subtitle: Text('$quantity kg   Rs.$price/kg',style: TextStyle(fontFamily: 'FiraSans',),),
       
-        trailing: Text('Rs. $price*$quantity',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        trailing: Text('Rs. $price X $quantity',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'PTSans',),),
       ),
     );
   }

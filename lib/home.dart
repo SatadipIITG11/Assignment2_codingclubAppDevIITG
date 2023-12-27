@@ -17,7 +17,7 @@ class _MyHomePageState extends State<Home> {
           title: Text(
             "MyShop",
             style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.w400, color: Colors.white),
+                fontSize: 27, fontWeight: FontWeight.w600, color: Colors.white,fontFamily: 'PTSans'),
           ),
           backgroundColor: Colors.red,
           leading: IconButton(
@@ -28,7 +28,9 @@ class _MyHomePageState extends State<Home> {
           ),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+            IconButton(onPressed: () {
+                
+            }, icon: Icon(Icons.shopping_cart))
           ],
         ),
         body: Center(

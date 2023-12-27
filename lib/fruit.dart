@@ -49,7 +49,7 @@ class _MyFruitPageState extends State<Fruit> {
         backgroundColor: Colors.red,
         title: Text(
           'FRUITS',
-          style: TextStyle(fontSize: 25, color: Colors.white),
+          style: TextStyle(fontSize: 25, color: Colors.white,fontFamily: 'PTSans'),
         ),
         centerTitle: true,
         // leading: IconButton(
@@ -59,6 +59,13 @@ class _MyFruitPageState extends State<Fruit> {
         //   },
         // ),
         actions: [
+          IconButton(
+              onPressed: () {
+                final message = SnackBar(
+                    content: Text('First enter Quantity and then press tick'));
+                ScaffoldMessenger.of(context).showSnackBar(message);
+              },
+              icon: Icon(Icons.info)),
           IconButton(
               onPressed: () {
                 Navigator.popUntil(context, ModalRoute.withName('/'));
@@ -111,7 +118,7 @@ class _MyFruitPageState extends State<Fruit> {
             padding: EdgeInsets.all(12),
             child: Text(
               '$name    $price Rs/kg',
-              style: TextStyle(fontSize: 22),
+              style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold,fontFamily: 'FiraSans'),
             ),
           ),
           ListTile(
